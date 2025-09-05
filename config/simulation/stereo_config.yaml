@@ -1,0 +1,56 @@
+%YAML:1.0
+---
+
+imu: 1
+num_of_cam: 2
+
+imu_topic: "/simple_drone/imu/out"
+image0_topic: "/simple_drone/stereo_camera_left/image_raw"
+image1_topic: "/simple_drone/stereo_camera_right/image_raw"
+output_path: "/home/tony-ws1/output/"
+
+cam_left_calib: "cam_left_calib.yaml"
+cam_right_calib: "cam_right_calib.yaml"
+image_width: 640
+image_height: 360
+
+estimate_extrinsic: 0
+
+#cam0 to body (assuming body is stereo_cam_link)
+body_T_cam0: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [1, 0, 0, 0,
+          0, 1, 0, 0.06,
+          0, 0, 1, 0,
+          0, 0, 0, 1]
+
+#cam1 to body
+body_T_cam1: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: d
+   data: [1, 0, 0, 0,
+          0, 1, 0, -0.06,
+          0, 0, 1, 0,
+          0, 0, 0, 1]
+
+multiple_thread: 0
+
+max_solver_time: 0.04
+max_num_iterations: 8
+keyframe_parallax: 10.0
+
+acc_n: 0.2
+gyr_n: 0.02
+acc_w: 0.0002
+gyr_w: 2.0e-5
+g_norm: 9.805
+
+estimate_td: 0
+td: 0.0
+
+save_image: 0
+visualize_imu_forward: 1
+visualize_camera_size: 0.4
