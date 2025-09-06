@@ -9,8 +9,8 @@ image0_topic: "/simple_drone/stereo_camera_left/image_raw"
 image1_topic: "/simple_drone/stereo_camera_right/image_raw"
 output_path: "/home/tony-ws1/output/"
 
-cam_left_calib: "cam_left_calib.yaml"
-cam_right_calib: "cam_right_calib.yaml"
+cam0_calib: "cam_left_calib.yaml"
+cam1_calib: "cam_right_calib.yaml"
 image_width: 640
 image_height: 360
 
